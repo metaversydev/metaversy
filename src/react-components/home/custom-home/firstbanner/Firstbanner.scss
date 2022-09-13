@@ -1,0 +1,39 @@
+.firstbanner {
+    background: linear-gradient(87.08deg, #6EF0C5 0%, #517AE2 37%, #9E74EC 58.35%, #6EF0C5 99.99%, rgba(217, 217, 217, 0) 100%);
+    background-size: cover;
+    position: relative;
+    min-height: 325px;
+    margin-top: 80px;
+
+    .container,
+    .row {
+        height: 100%;
+        min-height: inherit;
+    }
+
+    .row {
+        align-items: center;
+        justify-content: center;
+    }
+
+    h1 {
+
+        margin-top: 0;
+        color: #fff;
+        font-size: 2.5rem;
+        line-height: 3rem;
+        text-align: center;
+
+        color: #FFFFFF;
+
+        text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    }
+}
+
+@media screen and (max-width:450px) {
+    .firstbanner {
+        br {
+            display: none;
+        }
+    }
+}

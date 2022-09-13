@@ -1,0 +1,60 @@
+.profilebanner {
+    padding-top: 40px;
+
+    .row {
+        align-items: center;
+    }
+
+    .content {
+        flex: 0 0 50%;
+        max-width: 50%;
+        font-size: 2.5rem;
+        font-weight: bold;
+        line-height: 1.3em;
+
+        span {
+            background: linear-gradient(94.72deg, #F015FE 50.12%, #2BC0E3 38.51%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+    }
+
+    .animation {
+        line-height: 0px;
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+}
+
+@media screen and (max-width:768px) {
+    .profilebanner {
+        padding-bottom: 50px;
+
+        .animation {
+            flex: 0 0 100%;
+            max-width: 100%;
+            order: 1;
+
+            .lottie svg {
+                max-height: 300px;
+            }
+        }
+
+        .content {
+            flex: 0 0 100%;
+            max-width: 100%;
+            order: 2;
+            padding-top: 40px;
+            text-align: center;
+
+            p {
+                font-size: 1.8rem;
+            }
+
+            br {
+                display: none;
+            }
+        }
+    }
+}

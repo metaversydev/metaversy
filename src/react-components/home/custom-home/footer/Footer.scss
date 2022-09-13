@@ -1,0 +1,20 @@
+footer {
+    background: linear-gradient(90.37deg, #22E2AD 0%, #9116CA 59.9%, #0DB7DF 100%);
+    padding: 20px 0;
+    margin-top: 60px;
+    .row {
+        jUstify-content: space-between;
+    }
+    .social-media{
+        display: flex;
+        ul{
+            list-style: none;
+            display: flex;
+            gap: 20px;
+            padding-left: 0;
+            margin-bottom: 0;
+            justify-content: flex-end;
+            align-items: center;
+        }
+    }
+}
