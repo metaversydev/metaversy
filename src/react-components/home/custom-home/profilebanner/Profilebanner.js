@@ -2,6 +2,8 @@ import React from "react";
 import "./Profilebanner.scss";
 import Lottie from "lottie-react";
 import animation from "../../../../assets/images/profile-banner-animation.json";
+
+import { CreateSpaceButton } from "../components/createspace/CreateSpaceButton";
 const Profilebanner = () => {
   return (
     <section className="profilebanner">
@@ -12,6 +14,7 @@ const Profilebanner = () => {
               Kendini ifade edebilmen için basit <span>profil</span> sayfalarının yetmediğini gördük ve sana <br />{" "}
               koskoca bir <span>evren</span> <br /> verelim dedik.
             </p>
+            <CreateSpaceButton />
           </div>
           <div className="animation">
             <Lottie className="lottie" animationData={animation} loop={true} />

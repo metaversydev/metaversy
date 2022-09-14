@@ -11,6 +11,9 @@ import "./react-components/styles/global.scss";
 import "./assets/stylesheets/globals.scss";
 import { Center } from "./react-components/layout/Center";
 import { ThemeProvider } from "./react-components/styles/theme";
+import Header from "./react-components/home/custom-home/header/Header";
+import { Footer } from "./react-components/home/custom-home/footer/Footer";
+import MetaversyPageLayout from "./react-components/layout/custom-layout/MetaversyPageLayout";
 
 registerTelemetry("/signin", "Hubs Sign In Page");
 
@@ -22,11 +25,13 @@ function Root() {
     <WrappedIntlProvider>
       <ThemeProvider store={store}>
         <AuthContextProvider store={store}>
-          <PageContainer>
+          <MetaversyPageLayout>
+            <Header />
             <Center>
               <SignInModalContainer />
             </Center>
-          </PageContainer>
+            <Footer />
+          </MetaversyPageLayout>
         </AuthContextProvider>
       </ThemeProvider>
     </WrappedIntlProvider>

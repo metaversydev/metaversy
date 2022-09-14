@@ -12,12 +12,13 @@ export function CreateRoomButton() {
       thick={breakpoint === "sm" || breakpoint === "md"}
       xl={breakpoint !== "sm" && breakpoint !== "md"}
       preset="landing"
+      className=""
       onClick={e => {
         e.preventDefault();
         createAndRedirectToNewHub(null, null, false);
       }}
     >
-      <FormattedMessage id="create-room-button" defaultMessage="Create Room" />
+      <FormattedMessage id="create-room-button" defaultMessage="Create Space" />
     </Button>
   );
 }

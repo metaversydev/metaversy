@@ -11,6 +11,9 @@ import "./assets/stylesheets/globals.scss";
 import { PageContainer } from "./react-components/layout/PageContainer";
 import { Center } from "./react-components/layout/Center";
 import { ThemeProvider } from "./react-components/styles/theme";
+import MetaversyPageLayout from "./react-components/layout/custom-layout/MetaversyPageLayout";
+import Header from "./react-components/home/custom-home/header/Header";
+import { Footer } from "./react-components/home/custom-home/footer/Footer";
 
 registerTelemetry("/verify", "Hubs Verify Email Page");
 
@@ -22,11 +25,13 @@ function Root() {
     <WrappedIntlProvider>
       <ThemeProvider store={store}>
         <AuthContextProvider store={store}>
-          <PageContainer>
+          <MetaversyPageLayout>
+            <Header />
             <Center>
               <VerifyModalContainer />
             </Center>
-          </PageContainer>
+            <Footer />
+          </MetaversyPageLayout>
         </AuthContextProvider>
       </ThemeProvider>
     </WrappedIntlProvider>

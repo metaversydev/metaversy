@@ -9,10 +9,10 @@ html, body, :global(#root), :global(#ui-root), :global(.home-root) {
   height:100%;
 }
 
-// body {
-  //   background: theme.$background1-color;
-  //   color: theme.$text1-color;
-  // }
+body {
+  background: theme.$background1-color;
+  color: theme.$text1-color;
+}
 
 :global(#root), :global(#ui-root), :global(.home-root) {
   display:flex; 

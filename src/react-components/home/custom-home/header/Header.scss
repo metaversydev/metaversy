@@ -15,8 +15,14 @@
     }
 
     .logo {
+        flex: 0 0 67px;
+
         &:hover {
             animation: rotateLogo 1s ease;
+        }
+
+        img {
+            max-height: 60px;
         }
     }
 
@@ -46,10 +52,14 @@
 
             padding-left: 0;
         }
+
+        flex: 0 0 calc(50% - 67px);
+        max-width: calc(50% - 67px);
     }
 
     .log-in-button {
-
+        flex: 0 0 calc(50% - 67px);
+        max-width: calc(50% - 67px);
         display: flex;
         justify-content: flex-end;
 
@@ -71,6 +81,8 @@
         }
     }
 
+
+
     .mobile-hamburger {
         width: 30px;
         height: 30px;
@@ -90,6 +102,30 @@
     .mobile-menu {
         display: none;
     }
+}
+
+.admin-menu {
+    position: fixed;
+    bottom: 10px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background-color: #f1a;
+    border-radius: 50%;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.25);
+
+    a {
+        color: #fff;
+        font-size: 24px;
+
+        &:hover {
+            color: #2BC0E3;
+        }
+    }
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 @keyframes rotateLogo {
@@ -127,7 +163,7 @@
 
             width: 200px;
             bottom: 0;
-            top: 80px;
+            top: 65px;
 
             ul {
                 list-style: none;
@@ -147,12 +183,24 @@
             }
 
             .log-in-button {
-                display: block;
+                flex: 0 0 100%;
+                max-width: 100%;
                 text-align: center;
+                display: flex;
+                justify-content: center;
 
-                button {
+                button,
+                a {
                     padding: 20px 11px;
                 }
+            }
+        }
+
+        .logo {
+            flex: 0 0 50%;
+
+            img {
+                max-height: 45px;
             }
         }
     }

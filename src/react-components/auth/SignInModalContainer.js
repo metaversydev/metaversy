@@ -57,34 +57,33 @@ export function SignInModalContainer() {
   const { step, submitEmail, cancel, email } = useSignIn();
   const redirectUrl = qs.get("sign_in_destination_url") || "/";
 
-  useEffect(
-    () => {
-      if (step === SignInStep.complete) {
-        window.location = redirectUrl;
-      }
-    },
-    [step, redirectUrl]
-  );
+  useEffect(() => {
+    if (step === SignInStep.complete) {
+      window.location = redirectUrl;
+    }
+  }, [step, redirectUrl]);
 
   return (
-    <SignInModal disableFullscreen>
-      {step === SignInStep.submit ? (
-        <SubmitEmail
-          onSubmitEmail={submitEmail}
-          initialEmail={email}
-          signInReason={qs.get("sign_in_reason")}
-          termsUrl={configs.link("terms_of_use", TERMS)}
-          showTerms={configs.feature("show_terms")}
-          privacyUrl={configs.link("privacy_notice", PRIVACY)}
-          showPrivacy={configs.feature("show_privacy")}
-        />
-      ) : (
-        <WaitForVerification
-          onCancel={cancel}
-          email={email}
-          showNewsletterSignup={configs.feature("show_newsletter_signup")}
-        />
-      )}
-    </SignInModal>
+    <>
+      <SignInModal disableFullscreen>
+        {step === SignInStep.submit ? (
+          <SubmitEmail
+            onSubmitEmail={submitEmail}
+            initialEmail={email}
+            signInReason={qs.get("sign_in_reason")}
+            termsUrl={configs.link("terms_of_use", TERMS)}
+            showTerms={configs.feature("show_terms")}
+            privacyUrl={configs.link("privacy_notice", PRIVACY)}
+            showPrivacy={configs.feature("show_privacy")}
+          />
+        ) : (
+          <WaitForVerification
+            onCancel={cancel}
+            email={email}
+            showNewsletterSignup={configs.feature("show_newsletter_signup")}
+          />
+        )}
+      </SignInModal>
+    </>
   );
 }
