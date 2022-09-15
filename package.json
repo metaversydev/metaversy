@@ -133,12 +133,8 @@
     "screenfull": "^4.0.1",
     "sdp-transform": "^2.14.1",
     "semver": "^7.3.2",
-<<<<<<< HEAD
-    "swiper": "^8.3.2",
-    "three": "github:mozillareality/three.js#d96f3cf69c7303db807cabaa2acba09d648e5e96",
-=======
+  "swiper": "^8.3.2",
     "three": "github:mozillareality/three.js#c40ae76f114346b33616f72edf43b4eef26d338d",
->>>>>>> 94dc8798c5490b6776bd3e6611ad86aa6db214ed
     "three-ammo": "github:mozillareality/three-ammo",
     "three-mesh-bvh": "^0.3.7",
     "three-pathfinding": "^1.1.0",

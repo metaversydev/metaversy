@@ -62,6 +62,7 @@ export function getUploadsUrl(path, absolute = false, host = null, port = null) 
   // not the full assets URL.
   const isUsingCloudflare = configs.BASE_ASSETS_PATH.includes("workers.dev");
   const uploadsHost = isUsingCloudflare ? new URL(configs.BASE_ASSETS_PATH).hostname : configs.UPLOADS_HOST;
+  console.log("uploads host : ", uploadsHost);
   return uploadsHost
     ? `https://${uploadsHost}${port ? `:${port}` : ""}${path}`
     : getReticulumFetchUrl(path, absolute, host, port);
@@ -339,7 +340,10 @@ export function discordBridgesForPresences(presences) {
   for (const p of Object.values(presences)) {
     for (const m of p.metas) {
       if (m.profile && m.profile.discordBridges) {
-        Array.prototype.push.apply(channels, m.profile.discordBridges.map(b => b.channel.name));
+        Array.prototype.push.apply(
+          channels,
+          m.profile.discordBridges.map(b => b.channel.name)
+        );
       }
     }
   }

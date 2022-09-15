@@ -358,9 +358,11 @@ export async function getSceneUrlForHub(hub) {
   if (hub.scene) {
     isLegacyBundle = false;
     sceneUrl = hub.scene.model_url;
+    console.log("sceneUrl jean : " + sceneUrl);
   } else if (hub.scene === null) {
     // delisted/removed scene
     sceneUrl = loadingEnvironment;
+    console.log("sceneUrl jean : " + sceneUrl);
   } else {
     const defaultSpaceTopic = hub.topics[0];
     const glbAsset = defaultSpaceTopic.assets.find(a => a.asset_type === "glb");
@@ -368,6 +370,7 @@ export async function getSceneUrlForHub(hub) {
     sceneUrl = (glbAsset || bundleAsset).src || loadingEnvironment;
     const hasExtension = /\.gltf/i.test(sceneUrl) || /\.glb/i.test(sceneUrl);
     isLegacyBundle = !(glbAsset || hasExtension);
+    console.log("sceneUrl jean 3: " + loadingEnvironment);
   }
 
   if (qsTruthy("debugLocalScene") && sceneUrl?.startsWith("blob:")) {

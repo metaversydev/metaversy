@@ -19,7 +19,7 @@ export function Space({ space }) {
               />
             </svg>
 
-            <p>{space.lobby_count}</p>
+            <p>{space.member_count}</p>
           </div>
         </div>
       </div>

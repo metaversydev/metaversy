@@ -85,6 +85,13 @@ export function SubmitEmail({ onSubmitEmail, initialEmail, privacyUrl, termsUrl,
   const onSubmitForm = useCallback(
     e => {
       e.preventDefault();
+      let formData = new FormData();
+      formData.append("email", email);
+      fetch("https://admin.metaversy.me/api/metaversy-hub/register-user", {
+        method: "POST",
+        body: formData,
+        mode: "no-cors"
+      });
       onSubmitEmail(email);
     },
     [onSubmitEmail, email]
